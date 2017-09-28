@@ -63,26 +63,6 @@ namespace SpacingGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap asteroidbelt {
-            get {
-                object obj = ResourceManager.GetObject("asteroidbelt", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap asteroidbelt_400x173 {
-            get {
-                object obj = ResourceManager.GetObject("asteroidbelt_400x173", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap asteroidfield_399x433 {
             get {
                 object obj = ResourceManager.GetObject("asteroidfield_399x433", resourceCulture);

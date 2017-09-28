@@ -82,15 +82,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="Images\spaceship_23x23.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\asteroidbelt.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\asteroidbelt_400x173.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\asteroidfield_399x433.png" />

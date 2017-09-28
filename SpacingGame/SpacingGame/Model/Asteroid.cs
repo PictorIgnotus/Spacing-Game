@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace SpacingGame.Model
 {
-    class Asteroid
+    public class Asteroid
     {
+        Tuple<int, int> koordinates;
+        public Tuple<int, int> KOORDINATES
+        {
+            get { return koordinates; }
+        }
+            
+
+        public Asteroid(int xkoordinate)
+        {
+            koordinates = new Tuple<int, int>(xkoordinate, 0);
+        }
     }
 }

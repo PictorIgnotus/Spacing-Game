@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SpacingGame.Model
 {
-    class SGModel
+    public class SGModel
     {
     }
 }
