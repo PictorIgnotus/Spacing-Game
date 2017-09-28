@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SpacingGame
 {
-    public partial class spacingGame : Form
+    public partial class SGView : Form
     {
-        public spacingGame()
+        public SGView()
         {
             InitializeComponent();
         }

@@ -16,7 +16,7 @@ namespace SpacingGame
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new spacingGame());
+            Application.Run(new SGView());
         }
     }
 }
