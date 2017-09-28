@@ -45,6 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Asteroid.cs" />
+    <Compile Include="Model\SGModel.cs" />
+    <Compile Include="Model\Spaceship.cs" />
     <Compile Include="View\SGView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,11 +82,18 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Images\spaceship_23x23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\asteroidbelt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\asteroidbelt_400x173.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\asteroidfield_399x433.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
