@@ -6,37 +6,10 @@ using System.Threading.Tasks;
 
 namespace SpacingGame.Model
 {
-    public enum Direction { Right, Left, Down };
-
-    public class Spaceship
+    public class Spaceship : SpaceObject
     {
-        private int xkoordinate;
-
-        public int XKOORDINATE
+        public Spaceship(Koordinate koordinate) : base(koordinate)
         {
-            get { return xkoordinate; }
-        }
-
-        public Spaceship(int xkoordinate)
-        {
-            this.xkoordinate = xkoordinate;
-        }
-
-        public void MoveTo(Direction dir)
-        {
-            switch (dir)
-            {
-                case Direction.Right:
-                    ++xkoordinate;
-                    break;
-                case Direction.Left:
-                    --xkoordinate;
-                    break;
-                case Direction.Down:
-                    break;
-                default:
-                    break;
-            }
         }
     }
 }

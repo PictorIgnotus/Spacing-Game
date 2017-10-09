@@ -46,7 +46,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Asteroid.cs" />
+    <Compile Include="Model\GameModel.cs" />
+    <Compile Include="Model\IntPair.cs" />
     <Compile Include="Model\SGModel.cs" />
+    <Compile Include="Model\SpaceObject.cs" />
     <Compile Include="Model\Spaceship.cs" />
     <Compile Include="View\SGView.cs">
       <SubType>Form</SubType>
