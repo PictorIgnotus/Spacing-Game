@@ -263,3 +263,5 @@ __pycache__/
 # Building folders to ignore
 bin/**
 obj/**
+packages/**
+TestResults/**

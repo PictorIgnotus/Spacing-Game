@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SGView));
             this.gameTablePanel = new System.Windows.Forms.Panel();
             this.welcomeLabel = new System.Windows.Forms.Label();
@@ -46,13 +45,11 @@
             this.gameTablePanel.Controls.Add(this.welcomeLabel);
             this.gameTablePanel.Controls.Add(this.welcomePictureBox);
             this.gameTablePanel.Location = new System.Drawing.Point(39, 12);
-            this.gameTablePanel.MaximumSize = new System.Drawing.Size(506, 500);
-            this.gameTablePanel.MinimumSize = new System.Drawing.Size(506, 500);
+            this.gameTablePanel.MaximumSize = new System.Drawing.Size(506, 506);
+            this.gameTablePanel.MinimumSize = new System.Drawing.Size(506, 506);
             this.gameTablePanel.Name = "gameTablePanel";
-            this.gameTablePanel.Size = new System.Drawing.Size(506, 500);
+            this.gameTablePanel.Size = new System.Drawing.Size(506, 506);
             this.gameTablePanel.TabIndex = 0;
-
-            #region Welcome 
             // 
             // welcomeLabel
             // 
@@ -78,13 +75,10 @@
             this.welcomePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.welcomePictureBox.TabIndex = 1;
             this.welcomePictureBox.TabStop = false;
-            #endregion
-
-            #region MainpageButtons
             // 
             // newGameButton
             // 
-            this.newGameButton.Location = new System.Drawing.Point(39, 526);
+            this.newGameButton.Location = new System.Drawing.Point(39, 576);
             this.newGameButton.Name = "newGameButton";
             this.newGameButton.Size = new System.Drawing.Size(136, 23);
             this.newGameButton.TabIndex = 0;
@@ -94,37 +88,37 @@
             // 
             // pauseButton
             // 
-            this.pauseButton.Location = new System.Drawing.Point(225, 526);
+            this.pauseButton.Location = new System.Drawing.Point(225, 576);
             this.pauseButton.Name = "pauseButton";
             this.pauseButton.Size = new System.Drawing.Size(136, 23);
             this.pauseButton.TabIndex = 1;
             this.pauseButton.Text = "Pause/Start";
             this.pauseButton.UseVisualStyleBackColor = true;
+            this.pauseButton.Click += new System.EventHandler(this.Pause_Click);
+            this.pauseButton.Hide();
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(409, 526);
+            this.exitButton.Location = new System.Drawing.Point(409, 576);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(136, 23);
             this.exitButton.TabIndex = 2;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.ExitButton_Clicked);
-            #endregion
-
             // 
             // SGView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 561);
+            this.ClientSize = new System.Drawing.Size(584, 611);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.pauseButton);
             this.Controls.Add(this.newGameButton);
             this.Controls.Add(this.gameTablePanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(600, 600);
-            this.MinimumSize = new System.Drawing.Size(600, 600);
+            this.MaximumSize = new System.Drawing.Size(600, 650);
+            this.MinimumSize = new System.Drawing.Size(600, 650);
             this.Name = "SGView";
             this.Text = "Spacing Game";
             this.gameTablePanel.ResumeLayout(false);
