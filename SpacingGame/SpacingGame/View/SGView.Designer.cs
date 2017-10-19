@@ -95,7 +95,6 @@
             this.pauseButton.Text = "Pause/Start";
             this.pauseButton.UseVisualStyleBackColor = true;
             this.pauseButton.Click += new System.EventHandler(this.Pause_Click);
-            this.pauseButton.Hide();
             // 
             // exitButton
             // 

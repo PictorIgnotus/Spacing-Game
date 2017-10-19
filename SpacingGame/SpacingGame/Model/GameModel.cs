@@ -8,11 +8,12 @@ namespace SpacingGame.Model
 {
     public class GameModel
     {
-        private Tablesize       tablesize;
-        private Spaceship       spaceship;
-        private int             numberOfAsteroidsToCreate;
-        private List<Asteroid>  asteroids;
-        
+        private Tablesize                           tablesize;
+        private Spaceship                           spaceship;
+        private int                                 numberOfAsteroidsToCreate;
+        private List<Asteroid>                      asteroids;
+        public event EventHandler<GameEventArgs>    GameOver;
+
         #region Properties
         public Tablesize TABLESIZE
         {
@@ -53,21 +54,18 @@ namespace SpacingGame.Model
         {
             //to do not generate twice the same number
             List<int> possibleXkoords = new List<int>();
-            for(int i = 0; i < tablesize.first; ++i)
-            {
-                possibleXkoords.Add(i);
-            }
 
-            int maximum = tablesize.first;
-            int index;
-            for(int i = 0; i < numberOfAsteroidsToCreate; ++i)
+            List<int> xkoords = new List<int>();
+
+            for (int i = 0; i < numberOfAsteroidsToCreate; ++i)
             {
-                if (possibleXkoords.Any())
+                int x = RandomXkoorGenerator(tablesize.first);
+                while (xkoords.Contains(x) && xkoords.Count < tablesize.first)
                 {
-                    index = RandomXkoorGenerator(maximum--);
-                    this.asteroids.Add(new Asteroid(possibleXkoords[index]));
-                    possibleXkoords.RemoveAt(index);
+                    x = RandomXkoorGenerator(tablesize.first);
                 }
+                xkoords.Add(x);
+                asteroids.Add(new Asteroid(x));
             }
         }
 
@@ -78,6 +76,10 @@ namespace SpacingGame.Model
                 asteroid.MoveTo(SpaceObject.Direction.Down);
             }
             DeleteAsteroidsWichLeftTheBoard();
+            if(IsGameOver())
+            {
+                OnGameOver();
+            }
         }
 
         private void DeleteAsteroidsWichLeftTheBoard()
@@ -131,5 +133,10 @@ namespace SpacingGame.Model
             return rand.Next(0, max);
         }
         #endregion
+
+        private void OnGameOver()
+        {
+            GameOver?.Invoke(this, new GameEventArgs());
+        }
     }
 }
