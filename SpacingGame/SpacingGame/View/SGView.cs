@@ -42,35 +42,40 @@ namespace SpacingGame
         {
             if(isFirstGame)
             {
+                KeyPreview = true;
+
                 this.gameTablePanel.Controls.Remove(welcomeLabel);
                 this.gameTablePanel.Controls.Remove(welcomePictureBox);
+
+                moveAsteroidsTimer = new Timer();
+                moveAsteroidsTimer.Interval = 100;
+                moveAsteroidsTimer.Tick += new EventHandler(MoveAsteroids_Tick);
+
+                addNewAsteroidsTimer = new Timer();
+                addNewAsteroidsTimer.Interval = 700;
+                addNewAsteroidsTimer.Tick += new EventHandler(AddNewAsteroids_Tick);
+
+                increaseAsteroidsNumberTimer = new Timer();
+                increaseAsteroidsNumberTimer.Interval = 1500;
+                increaseAsteroidsNumberTimer.Tick += new EventHandler(IncreaseAsteroids_Tick);
+
+                KeyDown                                 += new KeyEventHandler(MoveSpaceship_KeyDown);
                 isFirstGame = false;
             }
-            KeyPreview = true;
+            
             model = new GameModel(tablesize);
             CreateTable();
             SetSpaceshipImage(Image.FromFile(spaceshipImageLocation));
 
             model.GameOver += new EventHandler<GameEventArgs>(Game_GameOver);
 
-            moveAsteroidsTimer                      = new Timer();
-            moveAsteroidsTimer.Interval             = 100;
-            moveAsteroidsTimer.Tick                 += new EventHandler(MoveAsteroids_Tick);
+            
 
-            addNewAsteroidsTimer                    = new Timer();
-            addNewAsteroidsTimer.Interval           = 700;
-            addNewAsteroidsTimer.Tick               += new EventHandler(AddNewAsteroids_Tick); 
-
-            increaseAsteroidsNumberTimer            = new Timer();
-            increaseAsteroidsNumberTimer.Interval   = 1500;
-            increaseAsteroidsNumberTimer.Tick       += new EventHandler(IncreaseAsteroids_Tick);
-
-            KeyDown                                 += new KeyEventHandler(MoveSpaceship_KeyDown);
 
             StartTimers();
             isPauseMode = false;
             pauseButton.Show();
-            gameDuration.Start();
+            gameDuration.Restart();
         }
 
 
